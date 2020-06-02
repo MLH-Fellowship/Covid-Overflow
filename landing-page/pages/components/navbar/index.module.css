@@ -1,0 +1,20 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 20px;
+}
+.navbar span {
+  text-transform: uppercase;
+  color: #e64522;
+}
+
+.buttons {
+  display: flex;
+  list-style-type: none;
+}
+
+.buttons li {
+  font-size: 20px;
+  margin-right: 10px;
+}
