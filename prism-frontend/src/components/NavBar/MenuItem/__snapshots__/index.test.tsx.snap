@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders as expected 1`] = `
+<div>
+  <mock-button
+    classname="MenuItem-title-2"
+  >
+    <img
+      alt="title"
+      class="MenuItem-icon-3"
+      src="icon.png"
+    />
+    <mock-typography
+      variant="body2"
+    >
+      title
+    </mock-typography>
+  </mock-button>
+  <mock-popover
+    anchororigin="[object Object]"
+    classname="MenuItem-popover-4"
+    open="false"
+    paperprops="[object Object]"
+    transformorigin="[object Object]"
+  >
+    <div
+      class="MenuItem-categoryContainer-6"
+    >
+      <mock-typography
+        classname="MenuItem-categoryTitle-7"
+        variant="body2"
+      >
+        Category 1
+      </mock-typography>
+      <hr />
+      <div
+        class="MenuItem-layersContainer-8"
+      >
+        <mock-switch
+          checked="false"
+          color="default"
+          inputprops="[object Object]"
+          size="small"
+        />
+         
+        <mock-typography
+          variant="body1"
+        >
+          layer
+        </mock-typography>
+      </div>
+    </div>
+  </mock-popover>
+</div>
+`;

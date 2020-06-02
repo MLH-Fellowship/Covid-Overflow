@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders as expected 1`] = `
+<div>
+  <div
+    class="MapView-container-1"
+  >
+    <div
+      class="MapView-loading-2"
+    >
+      <mock-circularprogress
+        size="100"
+      />
+    </div>
+    <div
+      style="height: 100vh; width: 100vw;"
+    />
+    <mock-dateselector
+      availabledates=""
+    />
+    <mock-legends
+      layers=""
+    />
+  </div>
+</div>
+`;
