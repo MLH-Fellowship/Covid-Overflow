@@ -1,0 +1,39 @@
+.home {
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  display: flex;
+  margin: 0 20px;
+  align-items: center;
+  /* justify-content: space-evenly; */
+}
+
+.main h1 {
+  font-size: 60px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.main p {
+  margin-top: 0;
+  font-size: 20px;
+}
+.main_left {
+  width: 50%;
+  display: flex;
+  justify-self: center;
+  flex-direction: column;
+  padding: 0 40px;
+}
+.main_right {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero_img {
+  height: 260px;
+}
