@@ -1,0 +1,26 @@
+{
+  "name": "Covid_Overflow",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd landing-page && yarn build && yarn export && cd ../map-page && yarn build && cd .. && node index.js",
+    "start-nobuild": "node index.js",
+    "install-all": "yarn install && cd landing-page && yarn install && cd ../map-page && yarn install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MLH-Fellowship/0.3.2-team-3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MLH-Fellowship/0.3.2-team-3/issues"
+  },
+  "homepage": "https://github.com/MLH-Fellowship/0.3.2-team-3#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
