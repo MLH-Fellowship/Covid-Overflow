@@ -1,24 +1,14 @@
-import { has, isString, isNull } from 'lodash';
-import { FeatureCollection } from 'geojson';
+import {has, isNull, isString} from 'lodash';
+import {FeatureCollection} from 'geojson';
 import bbox from '@turf/bbox';
-import { LayerData, LayerDataParams, loadLayerData } from './layer-data';
-import {
-  ImpactLayerProps,
-  LayerType,
-  NSOLayerProps,
-  ThresholdDefinition,
-  WMSLayerProps,
-} from '../../config/types';
-import { ThunkApi } from '../store';
-import { layerDataSelector } from '../mapStateSlice';
-import { LayerDefinitions } from '../../config/utils';
-import {
-  featureIntersectsImage,
-  GeoJsonBoundary,
-  pixelsInFeature,
-} from '../../components/MapView/Layers/raster-utils';
-import { NSOLayerData } from './nso';
-import { WMSLayerData } from './wms';
+import {LayerData, LayerDataParams, loadLayerData} from './layer-data';
+import {ImpactLayerProps, LayerType, NSOLayerProps, ThresholdDefinition, WMSLayerProps,} from '../../config/types';
+import {ThunkApi} from '../store';
+import {layerDataSelector} from '../mapStateSlice';
+import {LayerDefinitions} from '../../config/utils';
+import {featureIntersectsImage, GeoJsonBoundary, pixelsInFeature,} from '../../components/MapView/Layers/raster-utils';
+import {NSOLayerData} from './nso';
+import {WMSLayerData} from './wms';
 import adminBoundariesRaw from '../../config/admin_boundaries.json';
 
 const adminBoundaries = adminBoundariesRaw as FeatureCollection;
@@ -68,7 +58,7 @@ const operations = {
   mean: (data: number[]) =>
     data.reduce((sum, value) => sum + value, 0) / data.length,
   median: (data: number[]) => {
-    // eslint-disable-next-line fp/no-mutating-methods
+    // eslint-disable-next-line
     const sortedValues = data.sort();
     // Odd cases we use the middle value
     if (sortedValues.length % 2 !== 0) {
@@ -134,7 +124,7 @@ export async function fetchImpactLayerData(
     );
   }
 
-  // eslint-disable-next-line fp/no-mutation
+  // eslint-disable-next-line
   const hazardLayer = checkRasterLayerData(
     layerDataSelector(layer.hazardLayer, date)(getState())!,
   );
@@ -158,10 +148,10 @@ export async function fetchImpactLayerData(
       >),
     )) as { payload: { data: unknown } };
 
-    // eslint-disable-next-line fp/no-mutation
+    // eslint-disable-next-line
     baselineData = checkBaselineDataLayer(layer.baselineLayer, data);
   } else {
-    // eslint-disable-next-line fp/no-mutation
+    // eslint-disable-next-line
     baselineData = checkBaselineDataLayer(
       layer.baselineLayer,
       baselineLayer.data,

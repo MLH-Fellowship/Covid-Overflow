@@ -1,10 +1,10 @@
-import { FeatureCollection } from 'geojson';
+import {FeatureCollection} from 'geojson';
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import { get } from 'lodash';
-import { GeoJSONLayer } from 'react-mapbox-gl';
+import {useDispatch} from 'react-redux';
+import {get} from 'lodash';
+import {GeoJSONLayer} from 'react-mapbox-gl';
 import * as MapboxGL from 'mapbox-gl';
-import { showPopup } from '../../../context/tooltipStateSlice';
+import {showPopup} from '../../../context/tooltipStateSlice';
 
 import adminBoundariesJson from '../../../config/admin_boundaries.json';
 
@@ -19,7 +19,7 @@ const fillPaint: MapboxGL.FillPaint = {
 };
 
 function onToggleHover(cursor: string, targetMap: MapboxGL.Map) {
-  // eslint-disable-next-line no-param-reassign, fp/no-mutation
+    // eslint-disable-next-line no-param-reassign,
   targetMap.getCanvas().style.cursor = cursor;
 }
 

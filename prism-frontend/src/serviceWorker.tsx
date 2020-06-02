@@ -10,7 +10,7 @@
 // To learn more about the benefits of this model and instructions on how to
 // opt-in, read https://bit.ly/CRA-PWA
 
-/* eslint-disable fp/no-mutation, no-param-reassign, no-console */
+/* eslint-disable , no-param-reassign, no-console */
 
 const isLocalhost = Boolean(
   window.location.hostname === 'localhost' ||
@@ -149,4 +149,5 @@ export function unregister() {
       });
   }
 }
-/* eslint-disable fp/no-mutation, no-param-reassign, no-console */
+
+/* eslint-disable , no-param-reassign, no-console */
