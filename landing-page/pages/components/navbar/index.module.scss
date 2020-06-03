@@ -1,0 +1,25 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 20px;
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  span {
+    text-transform: uppercase;
+    color: #e64522;
+  }
+
+  .buttons {
+    display: flex;
+    list-style-type: none;
+
+    li {
+      font-size: 2rem;
+      margin-right: 28px;
+    }
+  }
+}

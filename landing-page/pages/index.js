@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import classes from './index.module.css';
+import classes from './index.module.scss';
 import Navbar from './components/navbar';
 import Layout from './HOC/Layout';
 import Button from './components/Button';
