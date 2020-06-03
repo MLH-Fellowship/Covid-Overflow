@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cd docusaurus-site && yarn build && cd ../landing-page && yarn build && yarn export && cd ../map-page && yarn build && cd .. && node index.js",
     "start-nobuild": "node index.js",
-    "install-all": "yarn install && cd docusaurus-site && yarn install && cd ../landing-page && yarn install && cd ../map-page && yarn install"
+    "install-all": "yarn install && cd docusaurus-site && yarn install && cd ../landing-page && yarn install && cd ../map-page && yarn install",
+    "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -23,5 +24,8 @@
   "dependencies": {
     "express": "^4.17.1",
     "sass": "^1.26.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
   }
 }
