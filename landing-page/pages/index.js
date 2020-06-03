@@ -6,7 +6,7 @@ import classes from './index.module.scss';
 import Navbar from './components/navbar';
 import Layout from './HOC/Layout';
 import Button from './components/Button';
-
+import Loader from './components/Loader';
 export default function Home() {
   const [countryName, setCountryName] = useState(undefined);
   const [countryData, setCountryData] = useState(undefined);
@@ -56,6 +56,7 @@ export default function Home() {
   }, [countryData]);
   return (
     <Layout>
+      {!countryData && !countryName && <Loader />}
       <div className={classes.home}>
         <Navbar />
         <div className={classes.main}>
