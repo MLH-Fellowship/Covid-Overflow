@@ -22,9 +22,9 @@ if (process.env.NODE_ENV && process.env.NODE_ENV !== 'development') {
 function App() {
   return (
     <ThemeProvider theme={muiTheme}>
-      <Router>
+      <Router basename='/map'>
         <Switch>
-          <Route exact path="/map">
+          <Route exact path="/">
             <NavBar />
             <div className="App">
               <MapView />
