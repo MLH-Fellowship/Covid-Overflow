@@ -18,6 +18,25 @@ function Layout(props) {
           color: black;
           text-decoration: none;
         }
+
+        @media only screen and (max-width: 1250px) {
+          html,
+          body {
+            font-size: 60.5%;
+          }
+        }
+        @media only screen and (max-width: 1000px) {
+          html,
+          body {
+            font-size: 58.5%;
+          }
+        }
+        @media only screen and (max-width: 880px) {
+          html,
+          body {
+            font-size: 55.5%;
+          }
+        }
       `}</style>
     </div>
   );
