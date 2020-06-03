@@ -1,6 +1,7 @@
 {
   "name": "prism-frontend",
   "version": "0.1.0",
+  "homepage": "http://localhost:3000/map",
 
 
   "scripts": {
