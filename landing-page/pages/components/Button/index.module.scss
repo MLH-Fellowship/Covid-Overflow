@@ -1,6 +1,8 @@
+@import '../../variables.modules.scss';
+
 .btn {
-  background: #e64522;
-  border: #c53414;
+  background: $primary-color;
+  border: $primary-color-dark;
   outline: none;
   padding: 1rem 2rem;
   font-size: 1.6rem;
