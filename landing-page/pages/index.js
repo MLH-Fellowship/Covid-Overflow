@@ -16,7 +16,11 @@ export default function Home() {
                 The coronavirus outbreak is affecting the lives of millions.
               </p>
               <div>
-                <Button className={classes.main_btn}>Visualize</Button>
+                <Button className={classes.main_btn}>
+                  <a className={classes.content} href="/map">
+                    Visualize
+                  </a>
+                </Button>
               </div>
             </div>
             <div className={classes.main_right}>

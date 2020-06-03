@@ -7,8 +7,12 @@ function Navbar() {
         <span>Covid</span> Overflow
       </h2>
       <ul className={classes.buttons}>
-        <li>Readings</li>
-        <li>Maps</li>
+        <li>
+          <a href="/articles">Readings</a>
+        </li>
+        <li>
+          <a href="/map">Maps</a>
+        </li>
       </ul>
     </div>
   );

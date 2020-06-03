@@ -19,6 +19,7 @@
 .main_hero {
   display: flex;
   align-items: center;
+  padding-top: 3rem;
 }
 
 .main h1 {
@@ -34,13 +35,19 @@
 
 .main_btn {
   padding: 1rem 3rem;
+  color: white;
+}
+
+.main_btn .content {
+  color: white;
 }
 .main_left {
   width: 50%;
   display: flex;
   justify-self: center;
   flex-direction: column;
-  padding: 0 40px;
+  padding: 0 3rem;
+  padding-left: 11rem;
 }
 .main_right {
   width: 50%;

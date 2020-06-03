@@ -12,6 +12,12 @@ function Layout(props) {
           font-size: 62.5%;
           font-family: 'Righteous', cursive;
         }
+        a,
+        a:link,
+        a:visited {
+          color: black;
+          text-decoration: none;
+        }
       `}</style>
     </div>
   );
