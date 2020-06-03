@@ -21,6 +21,13 @@ The application provides the following features:
 2. Map with daily statistics
 3. Articles related to Covid-19
 
+## Technologies used
+- Next.js 
+- Docusaurus
+- Prism-frontend
+- Express
+- Covid API provided by NOVELCovid 
+
 ## Rules and Standards
 
 ### Pull Request
