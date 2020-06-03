@@ -35,6 +35,11 @@
 
 .main_btn {
   padding: 1rem 3rem;
+  color: white;
+}
+
+.main_btn .content {
+  color: white;
 }
 .main_left {
   width: 50%;
