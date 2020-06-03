@@ -21,7 +21,6 @@
   },
   "homepage": "https://github.com/MLH-Fellowship/0.3.2-team-3#readme",
   "dependencies": {
-    "express": "^4.17.1",
-    "sass": "^1.26.7"
+    "express": "^4.17.1"
   }
 }

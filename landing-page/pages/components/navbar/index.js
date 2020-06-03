@@ -1,6 +1,6 @@
-import classes from "./index.module.css";
+import classes from './index.module.css';
 
-function Button() {
+function Navbar() {
   return (
     <div className={classes.navbar}>
       <h2>
@@ -14,4 +14,4 @@ function Button() {
   );
 }
 
-export default Button;
+export default Navbar;
