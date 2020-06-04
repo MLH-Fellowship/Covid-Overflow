@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import covidAxios from './axios';
+import covidAxios from '../axios';
 import classes from './index.module.scss';
 import Navbar from './components/navbar';
 import Layout from './HOC/Layout';
@@ -50,10 +50,6 @@ export default function Home() {
     fetchData();
   }, []);
 
-  useEffect(() => {
-    console.log(countryName);
-    console.log(countryData);
-  }, [countryData]);
   return (
     <Layout>
       {!countryData && !countryName && <Loader />}
