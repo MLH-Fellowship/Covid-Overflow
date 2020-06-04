@@ -1,0 +1,143 @@
+.home {
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  background-image: url('/assets/hero-background.svg');
+  background-position: center;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  height: 90vh;
+  justify-content: space-around;
+
+  @media only screen and (max-width: 1250px) {
+    background-size: 85%;
+  }
+
+  @media only screen and (max-width: 1150px) {
+    background-size: 95%;
+  }
+
+  @media only screen and (max-width: 1050px) {
+    background-size: cover;
+  }
+
+  .main_hero {
+    display: flex;
+    align-items: center;
+    padding-top: 3rem;
+  }
+
+  & h1 {
+    font-size: 6rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    @media only screen and (max-width: 1250px) {
+      font-size: 5rem;
+    }
+    @media only screen and (max-width: 800px) {
+      font-size: 4rem;
+    }
+    @media only screen and (max-width: 500px) {
+      font-size: 3rem;
+    }
+  }
+
+  & p {
+    margin-top: 0;
+    font-size: 2rem;
+  }
+
+  &_btn {
+    padding: 1rem 3rem;
+    color: white;
+
+    & .content {
+      color: white;
+    }
+  }
+
+  &_left {
+    width: 50%;
+    display: flex;
+    justify-self: center;
+    flex-direction: column;
+    padding: 0 3rem;
+    padding-left: 11rem;
+    @media only screen and (max-width: 1250px) {
+      padding: 0 2rem;
+      padding-left: 6rem;
+    }
+
+    @media only screen and (max-width: 600px) {
+      padding: 0 2rem;
+      padding-left: 3rem;
+    }
+  }
+  &_right {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero_img {
+    height: 24rem;
+
+    @media only screen and (max-width: 1250px) {
+      height: 21rem;
+    }
+
+    @media only screen and (max-width: 880px) {
+      height: 17rem;
+    }
+    @media only screen and (max-width: 600px) {
+      height: 12rem;
+    }
+  }
+
+  &_footer {
+    font-size: 2.2rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    @media only screen and (max-width: 1250px) {
+      font-size: 2rem;
+    }
+    @media only screen and (max-width: 880px) {
+      font-size: 1.8rem;
+    }
+
+    & h2 {
+      margin-bottom: 5px;
+    }
+
+    & ul {
+      display: flex;
+      list-style-type: none;
+      & li {
+        margin-right: 50px;
+        text-align: center;
+
+        & p {
+          font-size: 2rem;
+
+          @media only screen and (max-width: 880px) {
+            font-size: 1.6rem;
+          }
+        }
+        & span {
+          font-size: 1.6rem;
+
+          @media only screen and (max-width: 880px) {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+}
