@@ -12,6 +12,7 @@ import { uniq } from 'lodash';
 import Boundaries from './Boundaries';
 import NSOLayer from './Layers/NSOLayer';
 import WMSLayer from './Layers/WMSLayer';
+import COVIDBoundryHighlightLayer from './Layers/COVIDBoundryHighlightLayer';
 import GroundstationLayer from './Layers/GroundstationLayer';
 import MapTooltip from './MapTooltip';
 import Legends from './Legends';
@@ -101,10 +102,10 @@ function MapView({ classes }: MapViewProps) {
         // eslint-disable-next-line react/style-prop-object
         style="mapbox://styles/eric-ovio/ckaoo00yp0woy1ipevzqnvwzi"
         onStyleLoad={saveMap}
-        center={[longitude, latitude]}
-        zoom={[zoom]}
+
+        zoom={[0]}
         containerStyle={{
-          height: '100vh',
+          height: 'calc(100vh - 40px)',
           width: '100vw',
         }}
         onClick={() => {
@@ -120,11 +121,12 @@ function MapView({ classes }: MapViewProps) {
               layer,
             });
           })}
+
         </>
+        <COVIDBoundryHighlightLayer/>
         <MapTooltip />
         <Boundaries />
       </MapboxMap>
-      <DateSelector availableDates={selectedLayerDates} />
       <Legends layers={layers} />
     </div>
   );
