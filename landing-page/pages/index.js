@@ -79,15 +79,21 @@ export default function Home() {
             <ul>
               <li>
                 <p>Cases</p>
-                <span>{countryData ? countryData.cases : 'N/A'}</span>
+                <span className={classes.cases}>
+                  {countryData ? countryData.cases : 'N/A'}
+                </span>
               </li>
               <li>
                 <p>Deaths</p>
-                <span>{countryData ? countryData.deaths : 'N/A'}</span>
+                <span className={classes.deaths}>
+                  {countryData ? countryData.deaths : 'N/A'}
+                </span>
               </li>
               <li>
                 <p>Recovered</p>
-                <span>{countryData ? countryData.recovered : 'N/A'}</span>
+                <span className={classes.recovered}>
+                  {countryData ? countryData.recovered : 'N/A'}
+                </span>
               </li>
             </ul>
           </div>
