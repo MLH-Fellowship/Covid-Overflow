@@ -102,10 +102,10 @@ function MapView({ classes }: MapViewProps) {
         // eslint-disable-next-line react/style-prop-object
         style="mapbox://styles/eric-ovio/ckaoo00yp0woy1ipevzqnvwzi"
         onStyleLoad={saveMap}
-        center={[longitude, latitude]}
-        zoom={[zoom]}
+
+        zoom={[0]}
         containerStyle={{
-          height: '100vh',
+          height: 'calc(100vh - 40px)',
           width: '100vw',
         }}
         onClick={() => {
