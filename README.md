@@ -1,4 +1,5 @@
 # Covid Overflow
+![logo](https://imgur.com/28zQk6r.png)
 
 ## Quick Start
 
