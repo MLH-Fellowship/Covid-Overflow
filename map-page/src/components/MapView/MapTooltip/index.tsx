@@ -7,7 +7,7 @@ import {tooltipSelector} from '../../../context/tooltipStateSlice';
 function MapTooltip({classes}: TooltipProps) {
   const popup = useSelector(tooltipSelector);
 
-  console.log(popup.coordinates);
+  console.log(popup.data);
   return popup.showing && popup.coordinates ? (
       <Popup
           anchor="bottom"
@@ -16,11 +16,11 @@ function MapTooltip({classes}: TooltipProps) {
     >
       <h4>{popup.locationName}</h4>
       {Object.entries(popup.data)
-        .filter(([, value]) => value.coordinates === popup.coordinates)
+
         .map(([key, value]) => (
-          <h4 key={key}>
-            {key}: {value.data}
-          </h4>
+            <h4 key={key}>
+              {key.split('-')[0]}: {value.data}
+            </h4>
         ))}
     </Popup>
   ) : null;

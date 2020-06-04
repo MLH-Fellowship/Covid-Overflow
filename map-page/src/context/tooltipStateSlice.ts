@@ -1,9 +1,9 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { merge } from 'lodash';
-import { RootState } from './store';
+import {createSlice, PayloadAction} from '@reduxjs/toolkit';
+import {RootState} from './store';
 
 export interface PopupData {
-  [key: string]: { data: number; coordinates: GeoJSON.Position };
+  [key: string]: { data: string; locationName?: string, coordinates?: GeoJSON.Position };
+
 }
 
 export interface MapTooltipState {
@@ -33,7 +33,7 @@ export const tooltipStateSlice = createSlice({
       { payload }: PayloadAction<PopupData>,
     ) => ({
       ...rest,
-      data: merge({}, data, payload),
+      data: {...data, ...payload},
     }),
 
     setPopupData: (state, { payload }: PayloadAction<PopupData>) => ({

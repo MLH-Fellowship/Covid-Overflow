@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {Marker} from 'react-mapbox-gl';
 import {CovidSwitch, covidSwitchSelector} from "../../../context/mapStateSlice";
 import {createStyles, WithStyles, withStyles,} from '@material-ui/core';
-import {showPopup} from "../../../context/tooltipStateSlice";
+import {setPopupData, showPopup} from "../../../context/tooltipStateSlice";
 
 const circleStyle=(size:number,color:string,opacity: number)=>({
     display:'block',
@@ -42,18 +42,31 @@ function NSOLayers({classes}:WithStyles<typeof styles>){
             if(country[type]>max[type])
                 max[type]=country[type] as number;
         });
+
+
     });
     console.log(covidData[0]);
     const ret:JSX.Element[]=[];
     const mapped=(switchType:CovidSwitch,country:any,minMap:number=0)=>scale(country[switchType],min[switchType],max[switchType],minMap,1);
     const addMarkers=(switchType:CovidSwitch,color:string)=>
         ret.push(...covidData.map((country,index)=>{
-        const {lat,long}=country.countryInfo;
-        const sizeMapped=mapped(switchType,country,0.1);
-        const opacityMapped=mapped(switchType,country,0.5);
-        return <Marker key={country.country+index+switchType} coordinates={[long,lat]}
-                       onClick={()=>dispatch(showPopup({coordinates: [long,lat],locationName: country.country }))}>
-            <span style={circleStyle(sizeMapped,color,opacityMapped)}/>
+            const {lat, long} = country.countryInfo;
+            const sizeMapped = mapped(switchType, country, 0.2);
+            const opacityMapped = mapped(switchType, country, 0.5);
+        return <Marker key={country.country + index + switchType} coordinates={[long, lat]}
+                       onClick={() => {
+
+                           dispatch(showPopup({coordinates: [long, lat], locationName: country.country}));
+                           dispatch(setPopupData({
+                               [`Active-${country.country}`]: {data: country.active, locationName: country.country},
+                               [`Deaths-${country.country}`]: {data: country.deaths, locationName: country.country},
+                               [`Recovered-${country.country}`]: {
+                                   data: country.recovered,
+                                   locationName: country.country
+                               }
+                           }));
+                       }}>
+            <span style={circleStyle(sizeMapped, color, opacityMapped)}/>
         </Marker>
     }));
     if(switchData.deaths)
