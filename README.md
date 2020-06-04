@@ -40,3 +40,20 @@ Please don't make a PR without any issue. If you make one, it will be closed. If
 Name your branches something like this
 
 dev/\${issueNo}-#{yourGitHubName}
+
+### Project Flow
+So this project is divided into three Parts
+- Landing Page (Next.Js)
+- Documentation (Docusaurus)
+- Map (PRISM Frontend) 
+
+## Landing Page
+### Folder Layout
+
+- All the files are inside **Pages** except just one which is related to axios.
+- There is a HOC **Layout** which lies inside **Pages/HOC** and which is wrapped around the main **index.js**. This Layout file has global CSS styling.
+- All the reusable Components such as buttons, Loaders etc lies in **Pages/Components**.
+
+### CSS Styling
+All the Styles are scoped to it's component using css modules only except the **Layout** styles which are global.
+A Scss file named **variables.modules** lies in the Pages which contain all the variables (colors mainly).
