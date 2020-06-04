@@ -12,18 +12,18 @@ const features = [
     imageUrl: 'img/undraw_medical_research.svg',
     description: (
       <>
-        Covid Overflow equips you with the latest information about Covid-19. 
+        Covid Overflow equips you with the latest information about COVID-19. 
         Click on the Article tab to find out more.
       </>
     ),
   },
   {
-    title: <>Find Covid-19 Resources</>,
+    title: <>Find COVID-19 Resources</>,
     imageUrl: 'img/undraw_road_sign.svg',
     description: (
       <>
-        Covid Overflow links you to relevant Covid-19 related information.
-        We aim to consolidate everything you need to know about Covid-19 in one place.
+        Covid Overflow links you to relevant COVID-19 related information.
+        We aim to consolidate everything you need to know about COVID-19 in one place.
       </>
     ),
   },

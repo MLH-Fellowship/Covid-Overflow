@@ -1,6 +1,6 @@
 module.exports = {
   title: 'Covid Overflow',
-  tagline: 'Everything you need to know about Covid-19 in one place',
+  tagline: 'Everything you need to know about COVID-19 in one place',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/articles/',
   favicon: 'img/favicon.ico',
@@ -18,9 +18,9 @@ module.exports = {
           to: 'docs/',
           activeBasePath: 'docs',
           label: 'Articles',
-          position: 'left',
+          position: 'right',
         },
-        {to: 'blog', label: 'Dashboard', position: 'left'},
+        {to: 'blog', label: 'Dashboard', position: 'right'},
         {
           href: 'https://github.com/MLH-Fellowship/0.3.2-team3-covid-overflow',
           label: 'GitHub',
