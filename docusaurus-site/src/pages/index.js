@@ -8,32 +8,32 @@ import styles from './styles.module.css';
 
 const features = [
   {
-    title: <>Easy to Use</>,
-    imageUrl: 'img/undraw_docusaurus_mountain.svg',
+    title: <>Keep Up to Date</>,
+    imageUrl: 'img/undraw_medical_research.svg',
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Covid Overflow equips you with the latest information about COVID-19. 
+        Click on the Article tab to find out more.
       </>
     ),
   },
   {
-    title: <>Focus on What Matters</>,
-    imageUrl: 'img/undraw_docusaurus_tree.svg',
+    title: <>Find COVID-19 Resources</>,
+    imageUrl: 'img/undraw_road_sign.svg',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Covid Overflow links you to relevant COVID-19 related information.
+        We aim to consolidate everything you need to know about COVID-19 in one place.
       </>
     ),
   },
   {
-    title: <>Powered by React</>,
-    imageUrl: 'img/undraw_docusaurus_react.svg',
+    title: <>Share Data Visualizations</>,
+    imageUrl: 'img/undraw_connected_world.svg',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Covid Overflow displays data visualizations on its dashboard. 
+        You can even contribute by sharing your own data visualization.
       </>
     ),
   },
