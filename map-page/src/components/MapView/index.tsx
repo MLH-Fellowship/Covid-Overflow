@@ -12,6 +12,7 @@ import { uniq } from 'lodash';
 import Boundaries from './Boundaries';
 import NSOLayer from './Layers/NSOLayer';
 import WMSLayer from './Layers/WMSLayer';
+import COVIDBoundryHighlightLayer from './Layers/COVIDBoundryHighlightLayer';
 import GroundstationLayer from './Layers/GroundstationLayer';
 import MapTooltip from './MapTooltip';
 import Legends from './Legends';
@@ -120,7 +121,9 @@ function MapView({ classes }: MapViewProps) {
               layer,
             });
           })}
+
         </>
+        <COVIDBoundryHighlightLayer/>
         <MapTooltip />
         <Boundaries />
       </MapboxMap>

@@ -41,9 +41,10 @@ function Boundaries() {
       fillOnMouseLeave={(evt: any) => onToggleHover('', evt.target)}
       fillOnClick={(evt: any) => {
         const coordinates = evt.lngLat;
-        const locationName = get(evt.features[0], 'properties.ADM1_EN', '')
-          .concat(', ')
-          .concat(get(evt.features[0], 'properties.ADM2_EN', ''));
+        console.log(evt.features[0]);
+        const locationName = get(evt.features[0], 'properties.name', '')
+          .concat(' ')
+          .concat(get(evt.features[0], 'properties.state', ''));//NOT USED IN COVID - NO STATES
         dispatch(showPopup({ coordinates, locationName }));
       }}
     />
