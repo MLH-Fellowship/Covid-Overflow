@@ -1,17 +1,18 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import { Popup } from 'react-mapbox-gl';
-import { createStyles, withStyles, WithStyles } from '@material-ui/core';
-import { tooltipSelector } from '../../../context/tooltipStateSlice';
+import {useSelector} from 'react-redux';
+import {Popup} from 'react-mapbox-gl';
+import {createStyles, withStyles, WithStyles} from '@material-ui/core';
+import {tooltipSelector} from '../../../context/tooltipStateSlice';
 
-function MapTooltip({ classes }: TooltipProps) {
+function MapTooltip({classes}: TooltipProps) {
   const popup = useSelector(tooltipSelector);
 
+  console.log(popup.coordinates);
   return popup.showing && popup.coordinates ? (
-    <Popup
-      anchor="bottom"
-      coordinates={popup.coordinates}
-      className={classes.popup}
+      <Popup
+          anchor="bottom"
+          coordinates={popup.coordinates}
+          className={classes.popup}
     >
       <h4>{popup.locationName}</h4>
       {Object.entries(popup.data)
