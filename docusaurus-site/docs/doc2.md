@@ -16,6 +16,6 @@ WHO recommends wearing **medical masks** for personnel in health care settings a
 In addition, contact tracing applications can notify users if they have been in contact with a COVID-19 patient. Wikipedia maintains a [**list of contact tracing applications**](https://en.wikipedia.org/wiki/COVID-19_apps) for various regions and their links.
 
 
-*1. [World Health Organization Q&A on Covid-19](https://www.who.int/emergencies/diseases/novel-coronavirus-2019/question-and-answers-hub/q-a-detail/q-a-coronaviruses#:~:text=symptoms) *
+*1. [List of contact tracing applications by Wikipedia](https://en.wikipedia.org/wiki/COVID-19_apps) *
 
-*2. [List of contact tracing applications by Wikipedia](https://en.wikipedia.org/wiki/COVID-19_apps) *
+*2. [World Health Organization Q&A on Covid-19](https://www.who.int/emergencies/diseases/novel-coronavirus-2019/question-and-answers-hub/q-a-detail/q-a-coronaviruses#:~:text=symptoms) *
