@@ -79,6 +79,7 @@
       padding-left: 3rem;
     }
   }
+
   &_right {
     width: 50%;
     display: flex;
@@ -86,9 +87,19 @@
     justify-content: center;
   }
 
+  @keyframes sway {
+    0%, 100% {
+      transform: rotate(-4deg);
+    }
+    50% {
+      transform: rotate(8deg);
+    }
+  }
+
   .hero_img {
     height: 24rem;
-
+    animation: sway 8s infinite;
+    transform-origin: 50% 60% 0;
     @media only screen and (max-width: 1250px) {
       height: 21rem;
     }
