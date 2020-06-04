@@ -1,8 +1,4 @@
-import {
-  configureStore,
-  getDefaultMiddleware,
-  combineReducers,
-} from '@reduxjs/toolkit';
+import {combineReducers, configureStore, getDefaultMiddleware,} from '@reduxjs/toolkit';
 
 import mapStateReduce from './mapStateSlice';
 import serverStateReduce from './serverStateSlice';
@@ -15,6 +11,7 @@ const reducer = combineReducers({
   tableState: tableStateReduce,
   tooltipState: tooltipStateReduce,
 });
+
 
 export const store = configureStore({
   reducer,

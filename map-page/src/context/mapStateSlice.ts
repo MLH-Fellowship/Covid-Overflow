@@ -1,15 +1,16 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Map as MapBoxMap } from 'mapbox-gl';
-import { RootState } from './store';
-import { LayerType } from '../config/types';
-import { LayerData, LayerDataTypes, loadLayerData } from './layers/layer-data';
+import {createSlice, PayloadAction} from '@reduxjs/toolkit';
+import {Map as MapBoxMap} from 'mapbox-gl';
+import {RootState} from './store';
+import {LayerType} from '../config/types';
+import {LayerData, LayerDataTypes, loadLayerData} from './layers/layer-data';
 
 interface DateRange {
   startDate?: number;
   endDate?: number;
 }
+
 //we need to get this done fast so I'm just dumping all types and state and everything wherever its most convenient
-type CovidSwitch="deaths"|"recovered"|"active";
+export type CovidSwitch = "deaths" | "recovered" | "active";
 
 type MapState = {
   layers: LayerType[];
@@ -52,26 +53,31 @@ export const mapStateSlice = createSlice({
     }),
 
     removeLayer: (
-      { layers, ...rest },
-      { payload }: PayloadAction<LayerType>,
+        { layers, ...rest },
+        {payload}: PayloadAction<LayerType>,
     ) => ({
       ...rest,
-      layers: layers.filter(({ id }) => id !== payload.id),
+      layers: layers.filter(({id}) => id !== payload.id),
     }),
 
-    updateDateRange: (state, { payload }: PayloadAction<DateRange>) => ({
+    updateDateRange: (state, {payload}: PayloadAction<DateRange>) => ({
       ...state,
       dateRange: payload,
     }),
+    toggleCovidSwitch: (state, {payload}: PayloadAction<CovidSwitch>) => {
+      const covidSwitchesClone = {...state.covidSwitches};
+      covidSwitchesClone[payload] = !covidSwitchesClone[payload];
+      return {...state, covidSwitches: covidSwitchesClone};
+    },
 
-    setMap: (state, { payload }: PayloadAction<MapGetter>) => ({
+    setMap: (state, {payload}: PayloadAction<MapGetter>) => ({
       ...state,
       mapboxMap: payload,
     }),
 
     dismissError: (
-      { errors, ...rest },
-      { payload }: PayloadAction<string>,
+        {errors, ...rest},
+        {payload}: PayloadAction<string>,
     ) => ({
       ...rest,
       errors: errors.filter(msg => msg !== payload),
@@ -135,6 +141,7 @@ export const {
   removeLayer,
   updateDateRange,
   setMap,
+  toggleCovidSwitch,
 } = mapStateSlice.actions;
 
 export default mapStateSlice.reducer;

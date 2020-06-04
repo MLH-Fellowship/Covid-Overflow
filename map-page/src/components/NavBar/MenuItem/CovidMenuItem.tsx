@@ -1,33 +1,21 @@
 import React, {useState} from 'react';
-import {useSelector, useDispatch} from 'react-redux';
-import {
-    Button,
-    Typography,
-    Popover,
-    withStyles,
-    WithStyles,
-    createStyles,
-    Theme,
-    Switch,
-} from '@material-ui/core';
+import {useDispatch, useSelector} from 'react-redux';
+import {Button, createStyles, Popover, Switch, Theme, Typography, WithStyles, withStyles,} from '@material-ui/core';
+import {CovidSwitch, covidSwitchSelector, toggleCovidSwitch,} from '../../../context/mapStateSlice';
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faVirus as menuIcon} from "@fortawesome/free-solid-svg-icons";
 
-import {MenuItemType, LayerType, TableType} from '../../../config/types';
-import {
-    layersSelector,
-    addLayer,
-    removeLayer, covidSwitchSelector,
-} from '../../../context/mapStateSlice';
-import {loadTable} from '../../../context/tableStateSlice';
+const covidSwitches: Array<CovidSwitch> = ['deaths', 'recovered', 'active'];//TODO use the enum from mapStateSlice, this is a quick hack
 
-function MenuItem({classes, title, icon, layersCategories}: MenuItemProps) {
+function MenuItem({classes, title}: MenuItemProps) {
     const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
-
-    const deathSwitch = useSelector(covidSwitchSelector('deaths'));
-    const recoveredSwitch = useSelector(covidSwitchSelector('recovered'));
-    const activeSwitch = useSelector(covidSwitchSelector('active'));
-
-    const selectedLayers = useSelector(layersSelector);
     const dispatch = useDispatch();
+    const isCovidSwitchActive: { [k in CovidSwitch]: boolean } = {
+        deaths: useSelector(covidSwitchSelector('deaths')),
+        recovered: useSelector(covidSwitchSelector('recovered')),
+        active: useSelector(covidSwitchSelector('active')),
+    };
+
 
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         setAnchorEl(event.currentTarget);
@@ -37,17 +25,6 @@ function MenuItem({classes, title, icon, layersCategories}: MenuItemProps) {
         setAnchorEl(null);
     };
 
-    const toggleLayerValue = (prevChecked: boolean, layer: LayerType) => {
-        if (prevChecked) {
-            dispatch(removeLayer(layer));
-        } else {
-            dispatch(addLayer(layer));
-        }
-    };
-
-    const showTableClicked = (table: TableType) => {
-        dispatch(loadTable(table.id));
-    };
 
     const open = Boolean(anchorEl);
     const id = open ? 'menu-item-popover' : undefined;
@@ -59,7 +36,7 @@ function MenuItem({classes, title, icon, layersCategories}: MenuItemProps) {
                 onClick={handleClick}
                 aria-describedby={id}
             >
-                <img className={classes.icon} src={icon} alt={title}/>
+                <FontAwesomeIcon icon={menuIcon} className={classes.icon}/>
                 <Typography variant="body2">{title}</Typography>
             </Button>
 
@@ -81,44 +58,19 @@ function MenuItem({classes, title, icon, layersCategories}: MenuItemProps) {
                     className: classes.paper,
                 }}
             >
-                {layersCategories.map(({title: categoryTitle, layers, tables}) => (
-                    <div key={categoryTitle} className={classes.categoryContainer}>
-                        <Typography variant="body2" className={classes.categoryTitle}>
-                            {categoryTitle}
-                        </Typography>
-                        <hr/>
-
-                        {layers.map(layer => {
-                            const {id: layerId, title: layerTitle} = layer;
-                            const selected = Boolean(
-                                selectedLayers.find(({id: testId}) => testId === layerId),
-                            );
-                            return (
-                                <div key={layerId} className={classes.layersContainer}>
-                                    <Switch
-                                        size="small"
-                                        color="default"
-                                        checked={selected}
-                                        onChange={() => toggleLayerValue(selected, layer)}
-                                        inputProps={{'aria-label': layerTitle}}
-                                    />{' '}
-                                    <Typography variant="body1">{layerTitle}</Typography>
-                                </div>
-                            );
-                        })}
-
-                        {tables.map(table => (
-                            <Button
-                                className={classes.button}
-                                id={table.title}
-                                key={table.title}
-                                onClick={() => showTableClicked(table)}
-                            >
-                                <Typography variant="body1">{table.title}</Typography>
-                            </Button>
-                        ))}
+                {covidSwitches.map(switchType =>
+                    <div key={switchType} className={classes.layersContainer}>
+                        <Switch
+                            size="small"
+                            color="default"
+                            checked={isCovidSwitchActive[switchType]}
+                            onChange={() => dispatch(toggleCovidSwitch(switchType))}
+                            inputProps={{'aria-label': switchType}}
+                        />{' '}
+                        <Typography variant="body1">{switchType.toUpperCase()}</Typography>
                     </div>
-                ))}
+                )}
+
             </Popover>
         </>
     );
@@ -179,9 +131,9 @@ const styles = (theme: Theme) =>
         },
     });
 
-export interface MenuItemProps
-    extends MenuItemType,
-        WithStyles<typeof styles> {
+export interface MenuItemProps extends WithStyles<typeof styles> {
+    title: string
+
 }
 
 export default withStyles(styles)(MenuItem);

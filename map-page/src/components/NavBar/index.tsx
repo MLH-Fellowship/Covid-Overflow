@@ -1,24 +1,22 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, {useState} from 'react';
+import {Link} from 'react-router-dom';
 import {
   AppBar,
-  Toolbar,
-  Typography,
+  Button,
+  createStyles,
+  Drawer,
   Grid,
   Hidden,
   Theme,
+  Toolbar,
+  Typography,
   withStyles,
   WithStyles,
-  createStyles,
-  Button,
-  Drawer,
 } from '@material-ui/core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInfoCircle, faBars } from '@fortawesome/free-solid-svg-icons';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
-
-import MenuItem from './MenuItem';
-import { menuList } from './utils';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faBars, faInfoCircle} from '@fortawesome/free-solid-svg-icons';
+import {faGithub} from '@fortawesome/free-brands-svg-icons';
+import CovidMenuItem from "./MenuItem/CovidMenuItem";
 
 const rightSideLinks = [
   {
@@ -36,9 +34,7 @@ const rightSideLinks = [
 function NavBar({ classes }: NavBarProps) {
   const [openMobileMenu, setOpenMobileMenu] = useState(false);
 
-  const menu = menuList.map(({ title, ...category }) => (
-    <MenuItem key={title} title={title} {...category} />
-  ));
+  const menu = <CovidMenuItem title='Options'/>
 
   const buttons = rightSideLinks.map(({ title, icon, href }) => (
     <Grid item key={title}>
