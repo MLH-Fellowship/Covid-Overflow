@@ -24,10 +24,10 @@ const rightSideLinks = [
   {
     title: 'About',
     icon: faInfoCircle,
-    href: 'https://innovation.wfp.org/project/prism',
+    href: 'https://github.com/MLH-Fellowship/0.3.2-team3-covid-overflow',
   },
   {
-    title: 'Github',
+    title: 'Forked from PRISM',
     icon: faGithub,
     href: 'https://github.com/oviohub/prism-frontend',
   },
@@ -65,7 +65,7 @@ function NavBar({ classes }: NavBarProps) {
               component={Link}
               to="/"
             >
-              Prism
+              COVID Overflow
             </Typography>
           </Grid>
 

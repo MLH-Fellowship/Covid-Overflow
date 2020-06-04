@@ -29,7 +29,6 @@ function App() {
             <div className="App">
               <MapView />
             </div>
-            <DataDrawer />
           </Route>
 
           <Route default component={NotFound} />

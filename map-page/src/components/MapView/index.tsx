@@ -124,7 +124,6 @@ function MapView({ classes }: MapViewProps) {
         <MapTooltip />
         <Boundaries />
       </MapboxMap>
-      <DateSelector availableDates={selectedLayerDates} />
       <Legends layers={layers} />
     </div>
   );

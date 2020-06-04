@@ -8,9 +8,12 @@ interface DateRange {
   startDate?: number;
   endDate?: number;
 }
+//we need to get this done fast so I'm just dumping all types and state and everything wherever its most convenient
+type CovidSwitch="deaths"|"recovered"|"active";
 
 type MapState = {
   layers: LayerType[];
+  covidSwitches: {[k in CovidSwitch]:boolean};
   dateRange: DateRange;
   mapboxMap: MapGetter;
   loading: number;
@@ -31,6 +34,7 @@ const initialState: MapState = {
   loading: 0,
   errors: [],
   layersData: [],
+  covidSwitches:{active:true,deaths:false,recovered:false}
 };
 
 function keepLayer(layer: LayerType, payload: LayerType) {
@@ -121,6 +125,9 @@ export const layerDataSelector = (id: string, date?: number) => (
   );
 export const isLoading = (state: RootState): boolean =>
   state.mapState.loading > 0;
+export const covidSwitchSelector=(switchType: CovidSwitch)=>(state: RootState): boolean=>{
+  return state.mapState.covidSwitches[switchType];
+}
 
 // Setters
 export const {
