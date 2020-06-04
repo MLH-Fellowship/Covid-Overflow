@@ -105,7 +105,7 @@ module.exports = {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/MLH-Fellowship/0.3.2-team3-covid-overflow/edit/master/docusaurus-site/blog/',
+            'https://github.com/MLH-Fellowship/0.3.2-team3-covid-overflow/edit/master/docusaurus-site/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
