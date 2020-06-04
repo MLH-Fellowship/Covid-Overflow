@@ -71,7 +71,7 @@ export default function Home() {
               </div>
             </div>
             <div className={classes.main_right}>
-              <img className={classes.hero_img} src="/assets/virus.svg" />
+              <img className={classes.hero_img} src="/assets/virus3.svg" />
             </div>
           </div>
           <div className={classes.main_footer}>
