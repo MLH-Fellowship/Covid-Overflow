@@ -18,9 +18,14 @@ module.exports = {
           to: 'docs/',
           activeBasePath: 'docs',
           label: 'Articles',
+          position: 'left',
+        },
+        {to: 'blog', label: 'Dashboard', position: 'left'},
+        {
+          href: 'https://github.com/MLH-Fellowship/0.3.2-team3-covid-overflow/edit/master/docusaurus-site/blog/',
+          label: 'Contribute',
           position: 'right',
         },
-        {to: 'blog', label: 'Dashboard', position: 'right'},
         {
           href: 'https://github.com/MLH-Fellowship/0.3.2-team3-covid-overflow',
           label: 'GitHub',
@@ -76,6 +81,12 @@ module.exports = {
         },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Covid Overflow, Inc. Built with Docusaurus.`,
+    },
+    algolia: {
+      apiKey: 'api-key',
+      indexName: 'index-name',
+      appId: 'app-id', // Optional, if you run the DocSearch crawler on your own
+      algoliaOptions: {}, // Optional, if provided by Algolia
     },
   },
   presets: [
