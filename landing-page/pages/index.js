@@ -52,6 +52,10 @@ export default function Home() {
 
   return (
     <Layout>
+      <Head>
+        <title>COVID Overflow</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       {!countryData && !countryName && <Loader />}
       <div className={classes.home}>
         <Navbar />
