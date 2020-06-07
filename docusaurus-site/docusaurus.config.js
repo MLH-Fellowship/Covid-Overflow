@@ -83,8 +83,8 @@ module.exports = {
       copyright: `Copyright © ${new Date().getFullYear()} Covid Overflow, Inc. Built with Docusaurus.`,
     },
     algolia: {
-      apiKey: 'api-key',
-      indexName: 'index-name',
+      apiKey: '5e739930eb11152974f7db223f6dce1f',
+      indexName: 'covidoverflow',
       appId: 'app-id', // Optional, if you run the DocSearch crawler on your own
       algoliaOptions: {}, // Optional, if provided by Algolia
     },

@@ -22,6 +22,11 @@
     li {
       font-size: 2rem;
       margin-right: 28px;
+      
+      a:hover {
+        color: $nav-item-hover-color;
+      }
     }
   }
+
 }
