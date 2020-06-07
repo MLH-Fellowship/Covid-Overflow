@@ -10,4 +10,7 @@
   text-transform: uppercase;
   font-weight: bold;
   border-radius: 500px;
+  &:hover {
+    background: $primary-color-dark;
+  }
 }
